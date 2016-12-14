@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: bayanihan
+  host: bayanihan
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
+  command: bundle exec rake db:setup && bundle exec rails s -p $PORT
+  services:
+  - bayanihan-clearDB
