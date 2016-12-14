@@ -1,7 +1,31 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-current_user: <%= current_user.id %><br>
-using session: <%= User.find_by_id(session[:user_id]).id %>
 
+<div class="container">
 
-<%= link_to('Log Out', :action => 'logout') %>
+	<br>
+
+	<div class="row">
+
+		<div class="col-sm-2"></div>
+
+		<div class="col-sm-8">
+
+			<div class="well">
+
+				id: <%= current_user.id %><br>
+				uid: <%= current_user.uid %><br>
+				name: <%= current_user.name %><br>
+				location: <%= current_user.location %><br>
+				image_url: <%= current_user.image_url %><br>
+				url: <%= current_user.url %><br>
+				<br>
+				<a href="<%= url_for :action => 'logout' %>">Log Out</button>
+
+			</div>
+
+		</div>
+
+		<div class="col-sm-2"></div>
+
+	</div>
+
+</div>

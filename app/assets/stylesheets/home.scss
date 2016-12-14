@@ -12,7 +12,7 @@ html, body, #map {
 	height: 100%;
 }
 
-#module {
+#module-tweet {
 	width: 300px;
 	height: 600px;
 	position: absolute;
@@ -20,4 +20,18 @@ html, body, #map {
 	left: 100px;
 	margin-top: -300px;
 	border-radius: 10px;
+}
+
+#module-signIn {
+	width: 300px;
+	background-color: rgba(41,47,51,1);
+	position: absolute;
+	top: 65%;
+	right: 100px;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+#module-signIn * {
+	color: rgba(255,255,255,0.95);
 }
