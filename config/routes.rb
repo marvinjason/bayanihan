@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #match 'home/index', via: :get, :as => 'index'
   #match 'home/static', via: :get, :as => 'home'
 
-  root 'home#static'
+  root 'home#authenticated'
   get '/:controller(/:action)'
   get '/auth/twitter/callback', to: 'sessions#create'
 

@@ -1,12 +1,5 @@
-<h1>Sessions#create</h1>
-<p>Find me in app/views/sessions/create.html.erb</p>
 
-<!--
-
-	render map with tweetbox and 'log in with twitter' button
-
--->
-
-<p>id: <%= @user.id %></p>
-<p>uid: <%= @user.uid %></p>
-<p>id: <%= @user.name %></p>
+<script type="text/javascript">
+	window.opener.location = '<%= url_for :controller => 'home', :action => 'index' %>';
+	window.close();
+</script>
