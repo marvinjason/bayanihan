@@ -1,3 +1,29 @@
 <h1>Hello</h1>
 
-<%= link_to('Log In', '/auth/twitter') %>
+<button onclick="signIn()">Sign In</button>
+
+<script>
+	var newWindow;
+
+	function signIn() {
+
+		var provider_url = '/auth/twitter';
+		var width = 500;
+		var height = 500;
+		var screenX     = typeof window.screenX != 'undefined' ? window.screenX : window.screenLeft,
+			screenY     = typeof window.screenY != 'undefined' ? window.screenY : window.screenTop,
+			outerWidth  = typeof window.outerWidth != 'undefined' ? window.outerWidth : document.body.clientWidth,
+			outerHeight = typeof window.outerHeight != 'undefined' ? window.outerHeight : (document.body.clientHeight - 22),
+			left        = parseInt(screenX + ((outerWidth - width) / 2), 10),
+			top         = parseInt(screenY + ((outerHeight - height) / 2.5), 10),
+			features    = ('width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+
+		newWindow = window.open(provider_url, 'Login', features);
+
+		if (window.focus) {
+			newWindow.focus();
+		}
+
+		return false;
+	}
+</script>
