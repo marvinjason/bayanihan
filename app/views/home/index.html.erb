@@ -22,8 +22,8 @@
 
 				<hr>
 
-				<% @client.search('#BayanihanFirePost', result_type: "recent").take(30).collect do |tweet| %>
-				<p><%= tweet.text %></p>
+				<% Tweet.all.each do |tweet| %>
+				<p><%= tweet.message %></p>
 				<% end %>
 
 			</div>

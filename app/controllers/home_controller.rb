@@ -15,7 +15,7 @@ class HomeController < ApplicationController
       # TODO: Figure out how to get ENV for token & token secret.
     end
 
-    @client.search('#BayanihanFirePost', result_type: "recent").take(30).collect do |tweet|
+    @client.search('#BayanihanFirePost #BayanihanStormPost #BayanihanQuakePost', result_type: "recent").take(30).collect do |tweet|
       Tweet.new(:message => tweet.text, :user_id => current_user.id).save
     end
 

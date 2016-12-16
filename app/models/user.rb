@@ -2,6 +2,7 @@ class User < ApplicationRecord
 
 	serialize :access_token
 	has_many :tweets
+	has_many :posts
 
 	class << self
 		def from_omniauth(auth_hash)

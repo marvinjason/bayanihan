@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216190914) do
+ActiveRecord::Schema.define(version: 20161216195041) do
+
+  create_table "markers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
+    t.text     "message",    limit: 65535
+    t.integer  "radius"
+    t.string   "icon"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "message",    limit: 65535
+    t.integer  "user_id"
+    t.string   "type"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "tweets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "message",    limit: 65535

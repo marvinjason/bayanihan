@@ -1,5 +1,9 @@
 
-<div id='map'></div>
+<div id='map'>
+	
+	<iframe width='100%' height='100%' frameBorder='0' src='https://a.tiles.mapbox.com/v4/matthewdeama.2d3lplf0/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoibWF0dGhld2RlYW1hIiwiYSI6ImNpd2xkZ2J1cjAwMjQyem53dHRkZHc4NHAifQ.hT-pkHYcdrfY_4fbz1GMtw'></iframe>
+
+</div>
 
 <div id='module-tweet'>
 	<a class="twitter-timeline"  href="https://twitter.com/search?q=from%3Adost_pagasa%20OR%20from%3ANDRRMC_OpCen%20OR%20from%3Aphivolcs_dost" data-widget-id="809042962210394112"></a>
@@ -7,7 +11,7 @@
 
 <div id='module-signIn'>
 	<h2 class="text-center">Bayanihan</h2>
-	<h5 class="text-center">Community-driven awareness</h5>
+	<h5 class="text-center">Community-driven preparedness</h5>
 	<br>
 	<button class="btn btn-block btn-social btn-twitter" onclick="signIn()">
 		<span class="fa fa-twitter"></span>
@@ -41,11 +45,11 @@
 	}
 
 	<!-- Mapbox Embed -->
-	mapboxgl.accessToken = 'pk.eyJ1IjoibWFydmluamFzb24iLCJhIjoiY2l3a2ZkaGQ4MDAzYTJ5cGk4aHV1MXJndyJ9.F3TXN336jID44_J5einLgA';
-	var map = new mapboxgl.Map({
-	    container: 'map',
-	    style: 'mapbox://styles/marvinjason/ciwoxhst600is2ppamv1f24ck'
-	});
+	// mapboxgl.accessToken = 'pk.eyJ1IjoibWFydmluamFzb24iLCJhIjoiY2l3a2ZkaGQ4MDAzYTJ5cGk4aHV1MXJndyJ9.F3TXN336jID44_J5einLgA';
+	// var map = new mapboxgl.Map({
+	//     container: 'map',
+	//     style: 'mapbox://styles/marvinjason/ciwoxhst600is2ppamv1f24ck'
+	// });
 
 	<!-- Twitter Embed -->
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
