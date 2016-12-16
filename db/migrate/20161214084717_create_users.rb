@@ -9,5 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_column :users, :access_token, :text
   end
 end
