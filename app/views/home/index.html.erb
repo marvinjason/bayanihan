@@ -1,37 +1,8 @@
+<!-- current_user.id -->
+<!-- current_user.uid -->
+<!-- current_user.name -->
+<!-- current_user.location -->
+<!-- current_user.image_url -->
+<!-- current_user.url -->
+<!-- Tweet.all -->
 
-<div class="container">
-
-	<br>
-
-	<div class="row">
-
-		<div class="col-sm-2"></div>
-
-		<div class="col-sm-8">
-
-			<div class="well">
-
-				id: <%= current_user.id %><br>
-				uid: <%= current_user.uid %><br>
-				name: <%= current_user.name %><br>
-				location: <%= current_user.location %><br>
-				image_url: <%= current_user.image_url %><br>
-				url: <%= current_user.url %><br>
-				<br>
-				<a href="<%= url_for :action => 'logout' %>">Log Out</button>
-
-				<hr>
-
-				<% Tweet.all.each do |tweet| %>
-				<p><%= tweet.message %></p>
-				<% end %>
-
-			</div>
-
-		</div>
-
-		<div class="col-sm-2"></div>
-
-	</div>
-
-</div>
