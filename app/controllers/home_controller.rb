@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     end
 
     @client.search('#BayanihanFirePost', result_type: "recent").take(30).collect do |tweet|
-      Tweet.new(:message => tweet.text, :uid => current_user.uid).save
+      Tweet.new(:message => tweet.text, :user_id => current_user.id).save
     end
 
   end
