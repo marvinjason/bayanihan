@@ -1,8 +1,75 @@
-<!-- current_user.id -->
-<!-- current_user.uid -->
-<!-- current_user.name -->
-<!-- current_user.location -->
-<!-- current_user.image_url -->
-<!-- current_user.url -->
-<!-- Tweet.all -->
+	<div id="content">
+		<div id="map"></div>
+    <iframe id="frame" name="content-wrapper"></iframe>
+	</div>
+    <div class="sidebar">
+      <div class="container">
+        <h2>Bayanihan</h2><br>
 
+		    <a class="nav-btn" href="#" target="content-wrapper">Map</a>
+        <a class="nav-btn" href="forum.html" target="content-wrapper">Forum</a>
+        <a class="nav-btn" href="insight.html" target="content-wrapper">Insight</a>
+
+        <hr>
+
+        <center>
+          <div class="btn-group danger-group" data-toggle="buttons">
+            <label class="btn btn-default active">
+              <input type="radio" name="danger-option" id="fireOption" autocomplete="off" checked>
+                <span class="glyphicon glyphicon-fire" style="color: #BD4932"></span> Fire
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" name="danger-option" id="stormOption" autocomplete="off">
+              <span class="glyphicon glyphicon-tint" style="color: #1C74B9"></span> Storm
+            </label>
+            <label class="btn btn-default">
+              <input type="radio" name="danger-option" id="quakeOption" autocomplete="off">
+              <span class="glyphicon glyphicon-flash" style="color: #222222"></span> Quake
+            </label>
+          </div>  
+        </center>
+        <hr class="radio-hr">
+                
+        <form action="">
+          <div class="form-group">
+            <label for="">Latitude</label>
+            <input type="text" class="form-control" id="lat" placeholder="Click anywhere in the map">
+            <br>
+        
+            <label for="">Longitude</label>
+            <input type="text" class="form-control" id="lng" placeholder="Click anywhere in the map">
+            <br>
+        
+            <label for="">Radius</label>
+            <input type="text" class="form-control" id="radius" placeholder="Optional">
+            <br>
+        
+            <label for="">Popup Message</label>
+            <textarea id="message" rows="2" class="form-control" placeholder="Optional"></textarea>
+            <br>
+
+            <button onClick="submitClickPoints()" type="button" class = "btn btn-default">Submit</button>
+          </div>
+        </form>
+		<br><br><br><br><br><br>
+        <form action="">
+          <div class="form-group json-group">
+            <label for="">GeoJSON</label>
+            <textarea id="geojsonText" rows="3" class="form-control" placeholder="GeoJSON data"></textarea>
+            <br>
+
+            <button onClick="submitClickJSON()" type="button" class = "btn btn-default">Submit</button>
+          </div>
+        </form>
+		
+      </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+    <script src="css/dist/leaflet.awesome-markers.js"></script>
+    <script src='js/map.js'></script> -->
+
+	<!-- <script src='//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css'></script> -->

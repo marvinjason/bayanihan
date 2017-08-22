@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bayanihan</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag('bootstrap.min.css') %>
+    <%= stylesheet_link_tag('forumQuake.css') %>
+    <%= stylesheet_link_tag('https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css') %>
+    <%= stylesheet_link_tag('https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css') %>
+    <%= stylesheet_link_tag('http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css') %>
+    <%= stylesheet_link_tag('http://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css') %>
+    <%= stylesheet_link_tag('https://fonts.googleapis.com/css?family=Fjalla+One') %>
+    <%= stylesheet_link_tag('custom.css') %>
+  </head>
+
+  <body background="quake.jpg">
+
+    <%= yield %>
+    
+  </body>
+</html>

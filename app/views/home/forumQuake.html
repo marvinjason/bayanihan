@@ -1,0 +1,19 @@
+
+ <div class="sidebar">
+      <div class="container">
+        <h2>Bayanihan</h2><br>
+		<a href="#" target="content-wrapper">Map</a>   <a onclick= "hide()" href="forum.html" target="content-wrapper">Forum</a>   <a href="insight.html" target="content-wrapper">Insight</a>
+        <hr>
+        <script>
+          function hide() {
+            $("#map").hide();
+          }
+        </script>
+        <form action="">
+          <div class="form-group">
+            <label for="">Content</label>
+            <input type="text" class="form-control" id="lat" placeholder="Enter text...">
+            <br>
+            <button onClick="submitClickPoints()" type="button" class = "btn btn-default">Submit</button>
+          </div>
+        </form>

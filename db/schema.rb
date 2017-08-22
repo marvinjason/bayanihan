@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161216195041) do
   end
 
   create_table "tweets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "uid"
     t.text     "message",    limit: 65535
     t.integer  "user_id"
     t.datetime "created_at",               null: false
@@ -38,14 +39,17 @@ ActiveRecord::Schema.define(version: 20161216195041) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "uid",                        null: false
+    t.string   "uid",                           null: false
     t.string   "name"
     t.string   "location"
     t.string   "image_url"
     t.string   "url"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.text     "access_token", limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "oauth_token",     limit: 65535
+    t.text     "oauth_secret",    limit: 65535
+    t.text     "consumer_key",    limit: 65535
+    t.text     "consumer_secret", limit: 65535
   end
 
 end

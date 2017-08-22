@@ -2,23 +2,26 @@ class HomeController < ApplicationController
 
   def index
     @client = Twitter::REST::Client.new do |config|
-      # config.consumer_key        = 'LDT5XIq06LX1uLuqRK1GoqSvx'
-      # config.consumer_secret     = 'ZOvwH0V3xrZBI8GFldHgArE3ENxlimAZ3Oo72q3cJyjSEmaJ1g'
-      # config.access_token        = '602365274-Fr4hhyDisi46awhGFMebLZgrKDCJ1K5Yk6mGX6BI'
-      # config.access_token_secret = 'gkZYqn0UNkBmzufMGMqhtn3DAguLibdtepu5UCI9XHTme'
-
-      config.consumer_key        = 'LDT5XIq06LX1uLuqRK1GoqSvx'
-      config.consumer_secret     = 'ZOvwH0V3xrZBI8GFldHgArE3ENxlimAZ3Oo72q3cJyjSEmaJ1g'
-      #config.access_token        = request.env['omniauth.auth'][:extra][:access_token]
-      #config.access_token        = current_user.access_token
-      #config.access_token_secret = request.env['omniauth.auth.credentials.secret']
-      # TODO: Figure out how to get ENV for token & token secret.
+      config.access_token        = current_user.oauth_token
+      config.access_token_secret = current_user.oauth_secret
+      config.consumer_key        = current_user.consumer_key
+      config.consumer_secret     = current_user.consumer_secret
     end
 
-    @client.search('#BayanihanFirePost #BayanihanStormPost #BayanihanQuakePost', result_type: "recent").take(30).collect do |tweet|
-      Tweet.new(:message => tweet.text, :user_id => current_user.id).save
+    filters = %w{BayanihanFirePost BayanihanQuakePost BayanihanStormPost}
+
+    tweets = @client.user_timeline
+    tweets.each do |tweet|
+      if filters.any?{ |filter| tweet.text.include?(filter) }
+        unless Tweet.find_by_uid(tweet.id)
+          Tweet.create(uid: tweet.id, message: tweet.text, user_id: current_user.id)
+        end
+
+        break
+      end
     end
 
+    @tweets = Tweet.all
   end
 
   def static
